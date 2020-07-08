@@ -1,0 +1,124 @@
+<div class="content dataList">
+ 
+            <div class="content bottom-5">
+               
+                <div class="link-list link-list-1 dataSK">
+
+
+
+                    
+
+                </div>
+            </div>
+
+
+
+</div>
+
+
+ 
+</div>  
+
+
+
+<script type="text/javascript">
+
+	$.ajax({
+		url:'https://setiabudhi-supermarket.co.id/api/sk.php',
+		success:function(data){
+
+			// console.log(data.length);
+
+			for (var i = data.length - 1; i >= 0; i--) {
+
+				var elementROW="";
+			 		elementROW += '<a href="#" class="lihatSK" data="'+data[i]['sk']+'"><i class="fa fa-star color-yellow1-dark"></i><span>'+data[i]['sk']+'</span><i class="fa fa-angle-right"></i></a>';
+
+			 		
+			 		$(".dataSK").append(elementROW);
+
+			}
+
+
+
+
+								$(".lihatSK").click(function(e){
+									 e.preventDefault();
+
+
+
+									 $(".dataSK").html('<div class="content-boxed content-boxed-full shadow-large bottom-15"><div class="search search-header"><i class="fa fa-search"></i><input autocomplete="off" id="cariLokasi" type="text" placeholder="search loaction ?" data-search><a href="#" class="disabled"><i class="fa fa-times-circle color-red2-dark"></i></a></div></div>');
+
+
+
+
+												 var sk = $(this).attr("data");
+												 $.ajax({
+													url:'https://setiabudhi-supermarket.co.id/api/lokasi.php',
+													type:'POST',
+													data:{sk:sk},
+													success:function(data){
+
+														// $("#cariLokasi").focus();
+
+														$("#cariLokasi").on("keyup", function() {
+
+   														 		var value = $(this).val().toLowerCase();
+
+   														 	
+
+   														 		$(".lihatSK span").filter(function() {
+															    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+															    });
+
+   															})
+
+
+														
+
+															
+
+															for (var i = data.length - 1; i >= 0; i--) {
+
+																var elementROW="";
+															 		elementROW += '<a href="#" class="lihatLokasi" data="'+data[i]['ket']+'"><i class="fa fa-star color-red1-dark"></i><span>'+data[i]['ket']+'</span><i class="fa fa-angle-right"></i></a>';
+
+															 		console.log(data[i]['ket'])
+
+															 		
+															 		
+															 		$(".dataSK").append(elementROW);
+
+															}
+
+
+
+
+														
+
+
+
+
+													}
+
+
+
+									})
+
+							 })
+
+				
+
+		}
+
+
+	})
+
+
+
+
+
+	
+
+
+</script>

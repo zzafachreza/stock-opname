@@ -1,0 +1,21 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.setiabudhi.so"
+    },
+    "cordova-plugin-qr-barcode-scanner": {
+      "PACKAGE_NAME": "com.setiabudhi.so"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.setiabudhi.so"
+    }
+  },
+  "dependent_plugins": {}
+}

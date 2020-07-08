@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <link rel="shortcut icon" type="image/ico" href="https://setiabudhi-supermarket.co.id/images/stb.png"> 
+ 
+   <meta data-rh="true" property="og:title" content="Stock Opname | Setiabudhi Supermarket"/>
+  <meta data-rh="true" property="og:site_name" content="setiabudhi supermarket"/>
+  <meta data-rh="true" property="og:description" content="Stock Opname Setiabudhi Supermarket"/>
+  <meta data-rh="true" property="og:url" content="https://www.setiabudhi-supermarket.co.id"/>
+  <meta data-rh="true" property="og:image" content="https://setiabudhi-supermarket.co.id/images/new.jpg"/>
+  <meta data-rh="true" property="og:image:secure_url" content="https://setiabudhi-supermarket.co.id/images/new.jpg"/>
+  <meta data-rh="true" property="og:image:type" content="image/jpg"/>
+  <meta data-rh="true" property="og:image:width" content="1200"/>
+  <meta data-rh="true" property="og:image:height" content="1200"/>
+  <meta data-rh="true" property="og:image:alt" content="Setiabudhi Supermarket Logo"/>
+  <meta data-rh="true" data-rh="true" name="twitter:card" content="summary_large_image"/>
+  <meta data-rh="true" data-rh="true" name="twitter:site" content="@setiabudhi"/>
+  <meta data-rh="true" data-rh="true" name="twitter:creator" content="@setiabudhi"/>
+  <meta data-rh="true" data-rh="true" name="twitter:title" content="Situs Order Online Terlengkap, Mudah &amp; Aman | Setiabudhi Supermarket"/>
+  <meta data-rh="true" data-rh="true" name="twitter:description" content="Situs order online terlengkap dengan berbagai pilihan produk berkualitas. Belanja online mudah dan menyenangkan di setiabudhi supermarket"/>
+  <meta data-rh="true" data-rh="true" name="twitter:image" content="https://setiabudhi-supermarket.co.id/images/new.jpg"/>
+
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Stock Opname</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i|Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link rel="stylesheet" type="text/css" href="styles/framework.css">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">  
+</head>
+
+<body class="theme-light" data-background="none" data-highlight="red2">
+
+ <div class="header header-fixed header-logo-center"> 
+     
+
+        <a href="#" class="header-title"><img src="https://setiabudhi-supermarket.co.id/images/brand.png" style="width: 100%;margin-top:5%"></a>
+    </div>
+  <div class="page-content header-clear-medium" style="background-color: #FFF">
+
+
+
+
+    <div id="dataContent">
+
+      <div class="content content-boxed">
+          <form id="dataFormAwal">
+                <div class="input-style has-icon input-style-1 input-required">
+                    <i class="input-icon fa fa-user"></i>
+                    <span>USER INPUT</span>
+                    <input type="name" name="upd" placeholder="Masukan user yang input" required="required" autocomplete="off">
+                </div>
+                <button type="SUBMIT" class="button button-l button-full round-small bg-green2-dark top-10" style="width: 100%">
+                  SIMPAN
+                </button>
+        </form>
+      </div>
+      
+    </div>
+
+
+
+    <div id="footer-menu" class="footer-menu-3-icons footer-menu-style-1">
+            <a id="btnScan" href="#"><i class="fa fa-search"></i><span>Scan</span></a>
+            <a id="btnList" href="#"><i class="fa fa-list"></i><span>List Stock Opname </span></a>
+            <a id="btnProfile" href="#"><i class="fa fa-user"></i><span>Akun</span></a>
+            <div class="clear"></div>
+      </div>
+</div>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+ <script type="text/javascript" src="cordova.js"></script>
+<script src="https://js.pusher.com/5.1/pusher.min.js"></script>
+<script type="text/javascript" src="scripts/plugins.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+
+<script type="text/javascript">
+var dataLocal = window.localStorage;
+
+   $("input[name=upd]").focus();
+    $("input[name=upd]").val(dataLocal.getItem('upd'));
+
+    $("#dataFormAwal").submit(function(e){
+      e.preventDefault();
+
+      dataLocal.setItem("upd", $("input[name=upd]").val());
+
+    })
+
+
+
+    
+      $("#btnScan").click(function(e){
+          e.preventDefault();
+          $(this).addClass("active-nav");
+          $(this).siblings().removeClass("active-nav");
+          $("#dataContent").load("scan.html",function(){
+
+          });
+      });
+
+     $("#btnList").click(function(e){
+      $(this).addClass("active-nav");
+      $(this).siblings().removeClass("active-nav");
+        e.preventDefault();
+         $("#dataContent").load("list.html",function(){
+
+
+
+         });
+      });
+
+      $("#btnProfile").click(function(e){
+        $(this).addClass("active-nav");
+        $(this).siblings().removeClass("active-nav");
+         e.preventDefault();
+        $("#dataContent").load("profile.html",function(){
+
+
+
+
+        });
+    });
+
+</script>
+
+
+
+
+
+
+</body>
